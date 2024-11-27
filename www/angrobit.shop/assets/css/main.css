@@ -208,27 +208,7 @@ a {
   left: 0px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Scene */
 .scene {
   position: relative;
   width: 100%;
@@ -315,25 +295,7 @@ body > main > section > div.scene_3d > div > div > img.circle_image_product {
 .carousel {
   padding-top: 350px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* End scene */
 
 
 .preview_slider_box {
@@ -421,8 +383,8 @@ body > main > section > div.scene_3d > div > div > img.circle_image_product {
   overflow: hidden;
   position: relative;
   margin-top: 18px;
-  width: 179px;
-  height: 200px;
+  /* width: 179px;
+  height: 200px; */
   display: flex;
 }
 .preview_slider .container .container_carousel .carousel {
@@ -477,6 +439,10 @@ body > main > section > div.scene_3d > div > div > img.circle_image_product {
 .preview_slider .container .button .icon img {
   width: 8px;
   height: 12px;
+}
+
+#active_product_image {
+  margin-left: 390px;
 }
 
 .profile_widget {

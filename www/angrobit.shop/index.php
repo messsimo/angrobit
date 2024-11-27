@@ -40,10 +40,6 @@
             text-align: center;
             transition: transform 1s ease-in-out;
          }
-
-
-      
-
       </style>
    </head>
    <body class="body">
@@ -200,51 +196,78 @@
             </ul>
          </div>
       </div>
+
       <main class="main">
-         <section class="scene">
-            <div class="top_platform">
-               <img src="./assets/images/home/platform_top.png" alt="platform">
+    <section class="scene">
+        <div class="top_platform">
+            <img src="./assets/images/home/platform_top.png" alt="platform">
+        </div>
+        <div class="bottom_platform">
+            <img src="./assets/images/home/platform_bottom.png" alt="platform">
+        </div>
+        <!-- 3D SCENE -->
+        <div class="scene_3d" data-scene>
+            <div class="carousel">
+                <!-- Элементы будут созданы динамически -->
             </div>
-            <div class="bottom_platform">
-               <img src="./assets/images/home/platform_bottom.png" alt="platform">
+        </div>
+    </section>
+
+    <div class="preview_slider_box">
+        <div class="preview_slider">
+            <div class="container">
+                <span class="border border_t_left"></span>
+                <span class="border border_t_right"></span>
+                <span class="border border_b_left"></span>
+                <span class="border border_b_right"></span>
+                <p class="name_product" id="active_product_name">T-shirt </p>
+                <div class="preview_line"></div>
+                <div class="container_carousel">
+                    <img id="active_product_image" src="" alt="Active product image" draggable="false">
+                    <div class="carousel">
+                        <!-- Слайды карусели будут добавляться динамически -->
+                    </div>
+                </div>
+                <button class="button" id="preview_carousel_btn">
+                    <span class="text">PREVIEW</span>
+                    <span class="icon">
+                        <img src="./assets/images/home/icon_arrow.svg" alt="Arrow">
+                    </span>
+                </button>
             </div>
-            <!-- 3D SCENE -->
-            <div class="scene_3d" data-scene>
-    <div class="carousel">
-        <!-- Элементы будут созданы динамически -->
+        </div>
     </div>
-</div>
 
-<script type="module">
-    import Carousel3D from '/assets/js/Carousel3D.js';
+    <script type="module">
+        import Carousel3D from '/assets/js/Carousel3D.js';
 
-    const apiResponse = {
-        products: [
-            {
-                name: "T-shirt",
-                price: 191,
-                size: "S",
-                color: "white",
-                description: "Descroptiodsand dadaskd jadj ajds",
-                material: "COTTON",
-                benefici: "dsad asdadk aosd aosdjaidja",
-                type: "upper",
-                imageUrl: "./assets/images/home/shirt1.png",
-                model: "t_shirt.gltf",
-            },
-            {
-                name: "Hoody",
-                price: 192,
-                size: "S",
-                color: "black",
-                description: "Descroptiodsand dadaskd jadj ajds",
-                material: "COTTON",
-                benefici: "dsad asdadk aosd aosdjaidja",
-                type: "upper",
-                imageUrl: "./assets/images/home/shirt2.png",
-                model: "hoody.gltf",
-            },
-            {
+        const apiResponse = {
+            products: [
+               {
+                           name: "T-shirt",
+                           price: 191,
+                           size: "S",
+                           color: "white",
+                           description: "Descroptiodsand dadaskd jadj ajds",
+                           material: "COTTON",
+                           benefici: "dsad asdadk aosd aosdjaidja",
+                           type: "upper",
+                           imageUrl: "./assets/images/home/shirt1.png",
+                           model: "t_shirt.gltf",
+                       },
+                       {
+                           name: "Hoody",
+                           price: 192,
+                           size: "S",
+                           color: "black",
+                           description: "Descroptiodsand dadaskd jadj ajds",
+                           material: "COTTON",
+                           benefici: "dsad asdadk aosd aosdjaidja",
+                           type: "upper",
+                           imageUrl: "./assets/images/home/shirt2.png",
+                           model: "hoody.gltf",
+                       },
+                       {
                            name: "T-shirt",
                            price: 193,
                            size: "S",
@@ -294,116 +317,119 @@
                            imageUrl: "./assets/images/home/shirt6.png",
                            model: "hoody.gltf",
                        }
-        ]
-    };
+            ]
+        };
 
-    function createCarouselSlides(products) {
-        const carousel = document.querySelector('.carousel');
-        products.forEach((product, index) => {
-            const slide = document.createElement('div');
-            slide.classList.add('carousel_slide');
-            slide.setAttribute('data-index', index);
-            slide.setAttribute('data-name', product.name);
-            slide.setAttribute('data-type', product.type);
-            slide.setAttribute('data-color', product.color);
-            slide.setAttribute('data-model', product.model);
+        function createCarouselSlides(products) {
+            const carousel = document.querySelector('.carousel');
+            products.forEach((product, index) => {
+                const slide = document.createElement('div');
+                slide.classList.add('carousel_slide');
+                slide.setAttribute('data-index', index);
+                slide.setAttribute('data-name', product.name);
+                slide.setAttribute('data-type', product.type);
+                slide.setAttribute('data-color', product.color);
+                slide.setAttribute('data-model', product.model);
+                slide.setAttribute('data-image', product.imageUrl); // Добавляем атрибут с изображением
 
-            const circleImage = document.createElement('img');
-            circleImage.classList.add('circle_image');
-            circleImage.src = './assets/images/home/circle.png';
-            circleImage.alt = 'circle';
+                const circleImage = document.createElement('img');
+                circleImage.classList.add('circle_image');
+                circleImage.src = './assets/images/home/circle.png';
+                circleImage.alt = 'circle';
 
-            const productImage = document.createElement('img');
-            productImage.classList.add('circle_image_product');
-            productImage.src = product.imageUrl;
-            productImage.alt = product.name;
+                const productImage = document.createElement('img');
+                productImage.classList.add('circle_image_product');
+                productImage.src = product.imageUrl;
+                productImage.alt = product.name;
 
-            slide.appendChild(circleImage);
-            slide.appendChild(productImage);
-            carousel.appendChild(slide);
+                slide.appendChild(circleImage);
+                slide.appendChild(productImage);
+                carousel.appendChild(slide);
+
+                // Добавляем обработчик клика для центрального элемента
+                slide.addEventListener('click', () => {
+                    const selectedProduct = {
+                        name: product.name,
+                        price: product.price,
+                        size: product.size,
+                        color: product.color,
+                        description: product.description,
+                        material: product.material,
+                        benefici: product.benefici,
+                        type: product.type,
+                        imageUrl: product.imageUrl,
+                        model: product.model,
+                    };
+
+                    // Сохраняем выбранный продукт в локальное хранилище
+                    localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
+
+                    // Обновляем отображение активного элемента в карусели
+                    updateActiveSlide(index);
+                    updateCarouselImage(product.imageUrl, product.name);
+                });
+            });
+        }
+
+        createCarouselSlides(apiResponse.products);
+
+        const sceneMock = {
+            putOnclothes: (modelUrl, category, name, color, callback) => {
+                console.log(`Loaded: ${modelUrl} (Category: ${category}, Name: ${name}, Color: ${color})`);
+                callback({ traverse: () => {} }); // Mock object for 3D model
+            },
+        };
+
+        const carousel3D = new Carousel3D(
+            '.carousel',
+            sceneMock,
+            '.carousel_slide',
+            '.scene_3d'
+        );
+
+        // Обновление активного слайда при клике на элемент
+        const carouselSlides = document.querySelectorAll('.carousel_slide');
+        const productImageElement = document.getElementById('active_product_image');
+        const productNameElement = document.getElementById('active_product_name');
+
+        function updateActiveSlide(activeIndex = 0) {
+            carouselSlides.forEach(slide => slide.classList.remove('active'));
+            const activeSlide = carouselSlides[activeIndex];
+            if (activeSlide) {
+                activeSlide.classList.add('active');
+                const imageUrl = activeSlide.getAttribute('data-image');
+                const name = activeSlide.getAttribute('data-name');
+                const color = activeSlide.getAttribute('data-color');
+                
+                productImageElement.src = imageUrl;
+                productImageElement.alt = `${name} ${color}`;
+                productNameElement.textContent = name;
+            }
+        }
+
+        // Функция для обновления изображения в карусели
+        function updateCarouselImage(imageUrl, name) {
+            productImageElement.src = imageUrl;
+            productImageElement.alt = name;
+        }
+
+        // Изначально показываем первый элемент
+        updateActiveSlide();
+
+        // Обработчик клика по карусели для переключения слайдов
+        document.querySelector('.carousel').addEventListener('click', () => {
+            const currentActive = Array.from(carouselSlides).findIndex(slide => slide.classList.contains('active'));
+            const nextActive = (currentActive + 1) % carouselSlides.length;
+            updateActiveSlide(nextActive);
         });
-    }
+    </script>
 
-    createCarouselSlides(apiResponse.products);
+</main>
 
-    const sceneMock = {
-        putOnclothes: (modelUrl, category, name, color, callback) => {
-            console.log(`Loaded: ${modelUrl} (Category: ${category}, Name: ${name}, Color: ${color})`);
-            callback({ traverse: () => {} }); // Mock object for 3D model
-        },
-    };
 
-    const carousel3D = new Carousel3D(
-        '.carousel',
-        sceneMock,
-        '.carousel_slide',
-        '.scene_3d'
-    );
-</script>
-      <!-- SLIDER -->
-      <div class="preview_slider_box">
-         <div class="preview_slider">
-            <div class="container">
-               <span class="border border_t_left"></span>
-               <span class="border border_t_right"></span>
-               <span class="border border_b_left"></span>
-               <span class="border border_b_right"></span>
-               <p class="name_product">
-                  T-shirt
-               </p>
-               <div class="preview_line"></div>
-               <div class="container_carousel">
-                  <div class="carousel">
-                     <!-- SLIDER ITEMS -->
-                     <script>
-                        function createCarouselSlides(products) {
-                            const carouselContainer = document.querySelector('.carousel'); 
-                            
-                            products.forEach((product, index) => {
-                                const slideDiv = document.createElement('div');
-                                slideDiv.classList.add('carousel_slide');
-                                slideDiv.setAttribute('data-id', index + 1);
-                                slideDiv.setAttribute('data-image', product.imageUrl);
-                                slideDiv.setAttribute('data-name', product.name);
-                                slideDiv.setAttribute('data-price', product.price);
-                                slideDiv.setAttribute('data-size', product.size);
-                                slideDiv.setAttribute('data-color', product.color);
-                                slideDiv.setAttribute('data-description', product.description);
-                                slideDiv.setAttribute('data-material', product.material);
-                                slideDiv.setAttribute('data-benefici', product.benefici);
-                                slideDiv.setAttribute('data-type', product.type);
-                                slideDiv.setAttribute('data-model', product.model);
-                        
-                        
-                                const productImage = document.createElement('img');
-                                productImage.src = product.imageUrl;
-                                productImage.draggable = false;
-                                productImage.alt = `${product.name} ${product.color}`;
-                        
-                                slideDiv.appendChild(productImage);
-                        
-                                carouselContainer.appendChild(slideDiv);
-                            });
-                        }
-                        
-                        
-                        
-                        createCarouselSlides(apiResponse.products);
-                        
-                     </script>
-                  </div>
-               </div>
-               <button class="button" id="preview_carousel_btn"> 
-               <span class="text">
-               PREVIEW
-               </span>
-               <span class="icon">
-               <img src="./assets/images/home/icon_arrow.svg" alt="Arrow">
-               </span>
-               </button>
-            </div>
-         </div>
-      </div>
+
+
+                   
       <!-- PROFILE WIDGET -->
       <?php
          require_once 'core/profile.php';
