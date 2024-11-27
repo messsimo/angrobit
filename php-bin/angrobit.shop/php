@@ -1,0 +1,6 @@
+#!/bin/sh
+PHP_INI_SCAN_DIR='/var/www/www-root/data/php-bin/angrobit.shop:'
+PHPRC='/var/www/www-root/data/php-bin'
+export PHP_INI_SCAN_DIR
+export PHPRC
+exec /usr/bin/php-cgi

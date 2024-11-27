@@ -1,0 +1,21 @@
+[Mon Nov 25 01:37:23.154799 2024] [php7:error] [pid 117420] [client 92.55.190.215:0] script '/var/www/www-root/data/www/angrobit.com/index.php' not found or unable to stat
+[Mon Nov 25 01:37:24.636755 2024] [php7:error] [pid 117422] [client 92.55.190.215:0] script '/var/www/www-root/data/www/angrobit.com/index.php' not found or unable to stat
+[Mon Nov 25 01:37:25.334162 2024] [php7:error] [pid 117423] [client 92.55.190.215:0] script '/var/www/www-root/data/www/angrobit.com/index.php' not found or unable to stat
+[Mon Nov 25 03:26:52.567243 2024] [php7:error] [pid 121526] [client 120.224.169.28:0] script '/var/www/www-root/data/www/angrobit.com/index.php' not found or unable to stat
+[Mon Nov 25 03:26:53.085647 2024] [php7:error] [pid 121528] [client 120.224.169.28:0] script '/var/www/www-root/data/www/angrobit.com/index.php' not found or unable to stat
+[Mon Nov 25 03:26:53.354650 2024] [php7:error] [pid 121529] [client 120.224.169.28:0] script '/var/www/www-root/data/www/angrobit.com/index.php' not found or unable to stat
+[Mon Nov 25 04:45:13.697888 2024] [php7:error] [pid 125299] [client 45.156.130.41:0] script '/var/www/www-root/data/www/angrobit.com/status.php' not found or unable to stat
+[Mon Nov 25 04:45:35.346524 2024] [cgi:error] [pid 125307] [client 45.156.130.42:0] AH02811: script not found or unable to stat: /usr/lib/cgi-bin/authLogin.cgi
+[Mon Nov 25 04:46:58.606357 2024] [cgi:error] [pid 125350] [client 45.156.130.42:0] AH02811: script not found or unable to stat: /usr/lib/cgi-bin/main.pl
+[Mon Nov 25 07:47:45.591643 2024] [php7:error] [pid 131348] [client 217.15.161.125:0] script '/var/www/www-root/data/www/angrobit.com/php.php' not found or unable to stat
+[Mon Nov 25 07:47:49.270013 2024] [php7:error] [pid 131353] [client 217.15.161.125:0] script '/var/www/www-root/data/www/angrobit.com/phpinfo.php' not found or unable to stat
+[Mon Nov 25 07:47:54.947892 2024] [php7:error] [pid 131364] [client 217.15.161.125:0] script '/var/www/www-root/data/www/angrobit.com/test1.php' not found or unable to stat
+[Mon Nov 25 07:47:55.653397 2024] [php7:error] [pid 131365] [client 217.15.161.125:0] script '/var/www/www-root/data/www/angrobit.com/app_dev.php' not found or unable to stat
+[Mon Nov 25 07:47:57.016668 2024] [php7:error] [pid 131367] [client 217.15.161.125:0] script '/var/www/www-root/data/www/angrobit.com/index.php' not found or unable to stat
+[Mon Nov 25 07:47:58.281949 2024] [php7:error] [pid 131369] [client 217.15.161.125:0] script '/var/www/www-root/data/www/angrobit.com/test.php' not found or unable to stat
+[Mon Nov 25 07:48:05.691849 2024] [php7:error] [pid 131385] [client 217.15.161.125:0] script '/var/www/www-root/data/www/angrobit.com/php_info.php' not found or unable to stat
+[Mon Nov 25 07:48:06.959758 2024] [php7:error] [pid 131387] [client 217.15.161.125:0] script '/var/www/www-root/data/www/angrobit.com/config.php' not found or unable to stat
+[Mon Nov 25 07:48:07.594203 2024] [php7:error] [pid 131388] [client 217.15.161.125:0] script '/var/www/www-root/data/www/angrobit.com/info.php' not found or unable to stat
+[Mon Nov 25 07:48:15.331255 2024] [php7:error] [pid 131400] [client 217.15.161.125:0] script '/var/www/www-root/data/www/angrobit.com/wp-config.php' not found or unable to stat
+[Mon Nov 25 07:48:15.968738 2024] [php7:error] [pid 131401] [client 217.15.161.125:0] script '/var/www/www-root/data/www/angrobit.com/index.php' not found or unable to stat
+[Mon Nov 25 07:48:18.550369 2024] [php7:error] [pid 131404] [client 217.15.161.125:0] script '/var/www/www-root/data/www/angrobit.com/frontend_dev.php' not found or unable to stat
